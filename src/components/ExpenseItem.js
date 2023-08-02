@@ -1,13 +1,17 @@
+import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css';
 
-function ExpenseItem() {
+
+
+function ExpenseItem(props) {
+      
     return (
     // in un return ci può essere solo una radice div. Se si ha bisogno di più radici div, è necessario inserirle tutte in un unico div.
     <div className='expense-item'>  
-        <div>Date</div>
+    <ExpenseDate date={props.date}/>
         <div className='expense-item__description'>
-            <h2>Title</h2>
-            <div className='expense-item__price'>Amount</div>
+            <h2>{props.title}</h2>
+            <div className='expense-item__price'>${props.amount}</div>            
         </div>
     </div>
     );
